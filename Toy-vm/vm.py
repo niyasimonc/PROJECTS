@@ -110,17 +110,19 @@ def execute(code_obj):
             stak.push(stak.pop()*stak.pop())
             cur+=1
         elif opcode==21:    #BINARY_DIVIDE
-            stak.push(stak.pop()/stak.pop())
+             f=stak.pop()
+            s=stak.pop()
+            stak.push(s/f)
             cur+=1
         elif opcode==22:    #BINARY_MODULO
-            stak.push(stak.pop()%stak.pop())
+             f=stak.pop()
+            s=stak.pop()
+            stak.push(s%f)
             cur+=1
         elif opcode==24:    #BINARY_SUBTRACT
             f=stak.pop()
             s=stak.pop()
-#            print 'sub',f,s
             stak.push(s-f)
-      
             cur+=1
         elif opcode==12:    #UNARY NOT
             stak.push(not stak.pop())
